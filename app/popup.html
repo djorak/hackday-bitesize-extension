@@ -12,11 +12,13 @@
     <!-- endbuild -->
 </head>
 
-<body ng-app="studylater">
+<body ng-app="studylater" tabindex="1">
     <div class="learning-resources" ng-controller="MainController">
-        <header>
-            <h1 class="learning-resources__header" tabindex="1">Learning Resources</h1>
+        <header class="learning-resources__header clearfix">
+            <h1 class="learning-resources__header__title">Learning Resources</h1>
+            <button class="learning-resources__add-button" title="Add current study guide to the list">Add +</button>
         </header>
+
         <section class="">
             <ul class="learning-resources__list">
                 <li ng-repeat="resource in resources">

@@ -1,5 +1,4 @@
 @import '../bower_components/normalize.scss/normalize';
-
 // ------------------------------------
 //  COLOUR PALETTES
 // ------------------------------------
@@ -15,22 +14,47 @@ $putty: #f1f1ee;
 $light-grey: #dbe3e4;
 $dark-grey: #333;
 
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 .learning-resources {
-    width: 350px;
+    width: 450px;
     background-color: $putty;
 }
 
 .learning-resources__header {
-    background-color: $bronze;
-    color: #fff;
-    font-weight: normal;
-    line-height: 50px;
-    margin: 0;
+    background-color: $goldfish;
     padding-left: 10px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
 
-    &:focus {
-        outline: none;
+.learning-resources__header__title {
+    font-weight: normal;
+    margin: 0;
+    float: left;
+}
+
+.learning-resources__add-button {
+    float: right;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0 14px;
+
+    &:hover {
+        color: $bronze;
     }
+}
+
+.learning-resources__header__title,
+.learning-resources__add-button {
+    font-size: 2em;
+    color: #fff;
+    line-height: 60px;
 }
 
 .learning-resources__list {
@@ -50,5 +74,7 @@ $dark-grey: #333;
     &:hover {
         outline: none;
         background-color: #fff;
+        font-weight: bold;
+        padding-left: 24px;
     }
 }
