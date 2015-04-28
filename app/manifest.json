@@ -5,11 +5,14 @@
   "description": "__MSG_appDescription__",
   "icons": {
     "16": "images/icon-16.png",
+    "19": "images/icon-19.png",
+    "38": "images/icon-38.png",
     "128": "images/icon-128.png"
   },
   "default_locale": "en",
   "background": {
     "scripts": [
+      "scripts/helpers/storage.helper.js",
       "scripts/chromereload.js",
       "scripts/background.js"
     ]
@@ -21,18 +24,18 @@
     },
     "default_title": "StudyLater",
     "default_popup": "popup.html"
-  },
-  "content_scripts": [
-    {
-      "matches": [
-        "http://*/*",
-        "https://*/*"
-      ],
-      "js": [
-        "scripts/contentscript.js"
-      ],
-      "run_at": "document_end",
-      "all_frames": false
-    }
-  ]
+  }
+  // "content_scripts": [
+  //   {
+  //     "matches": [
+  //       "http://*.bbc.co.uk/education/guides/*/revision*"
+  //     ],
+  //     "js": [
+  //       "bower_components/jquery/dist/jquery.min.js",
+  //       "scripts/inject.js"
+  //     ],
+  //     "run_at": "document_end",
+  //     "all_frames": false
+  //   }
+  // ]
 }

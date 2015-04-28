@@ -1,4 +1,54 @@
-$padding: 20px;
-body {
-  padding: $padding;
+@import '../bower_components/normalize.scss/normalize';
+
+// ------------------------------------
+//  COLOUR PALETTES
+// ------------------------------------
+// Current branding palette
+$aqua: #2edfd2;
+$forest: #00a030;
+$goldfish: #ff8c00;
+$lime: #9ee52c;
+$petrol: #005361;
+$barracuda: #0a80a0;
+$bronze: #e5650e;
+$putty: #f1f1ee;
+$light-grey: #dbe3e4;
+$dark-grey: #333;
+
+.learning-resources {
+    width: 350px;
+    background-color: $putty;
+}
+
+.learning-resources__header {
+    background-color: $bronze;
+    color: #fff;
+    font-weight: normal;
+    line-height: 50px;
+    margin: 0;
+    padding-left: 10px;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.learning-resources__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.learning-resources__resource__link {
+    padding: 8px 16px;
+    display: block;
+    color: $dark-grey;
+    text-decoration: none;
+    border-bottom: 1px solid $light-grey;
+
+    &:focus,
+    &:hover {
+        outline: none;
+        background-color: #fff;
+    }
 }
