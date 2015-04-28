@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('markticle').service('StorageService', studyLaterStorageService);
+angular.module('studylater').service('StorageService', studyLaterStorageService);

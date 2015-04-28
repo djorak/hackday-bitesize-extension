@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css styles/main.css -->
@@ -16,25 +17,27 @@
     <div class="learning-resources" ng-controller="MainController">
         <header class="learning-resources__header clearfix">
             <h1 class="learning-resources__header__title">Learning Resources</h1>
-            <button class="learning-resources__add-button" title="Add current study guide to the list">Add +</button>
+            <button class="learning-resources__add-button" title="Add current study guide to the list" ng-click="refresh()">Add +</button>
         </header>
-
         <section class="">
             <ul class="learning-resources__list">
-                <li ng-repeat="resource in resources">
-                    <a class="learning-resources__resource__link" target="_blank" ng-href="{{resource.url}}">{{resource.title}}</a>
+                <li ng-repeat="resource in resources" class="learning-resources__resource">
+                    <a class="learning-resources__resource__link" target="_blank" ng-href="{{resource.url}}">
+                        {{resource.title}}
+                    </a>
+                    <button class="learning-resources__resource__remove" ng-click="removeResource(resource.url)">
+                        <i class="fa fa-trash-o remove"></i>
+                    </button>
                 </li>
+                <li ng-if="!resources.length">No learning resources. Use the Add button!</li>
             </ul>
         </section>
     </div>
-
-
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/angular/angular.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-
     <!-- build:js scripts/popup.js -->
     <script src="scripts/popup.js"></script>
     <script src="scripts/controllers/main.controller.js"></script>
