@@ -11,21 +11,26 @@ angular.module('studylater').controller('MainController', function($scope, $time
     };
 
     $scope.refresh = function() {
-        var url = chrome.tabs.query({
+        chrome.tabs.query({
             active: true,
             currentWindow: true
         }, function(tab) {
-            var storageService = new studyLaterStorageService();
-            storageService.add({
-                    title: tab[0].title,
-                    url: tab[0].url
-                },
-                function(resources) {
-                    $timeout(function() {
-                        $scope.resources = resources;
-                    }, 0);
-                }
-            );
+            var storageService = new studyLaterStorageService(),
+                studyGuidePattern = /^http:\/\/([\da-z\.-]+)\.bbc.co.uk\/education\/guides\/(z[\da-z\.-]+)\/revision/,
+                url = tab[0].url;
+
+            if (url && url.match(studyGuidePattern)) {
+                storageService.add({
+                        title: tab[0].title,
+                        url: url
+                    },
+                    function(resources) {
+                        $timeout(function() {
+                            $scope.resources = resources;
+                        }, 0);
+                    }
+                );
+            }
         });
     };
 });
