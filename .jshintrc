@@ -14,13 +14,14 @@
   "quotmark": "single",
   "regexp": true,
   "undef": true,
-  "unused": true,
+  "unused": false,
   "strict": true,
   "trailing": true,
   "smarttabs": true,
   "globals" : {
     "chrome": true,
     "crypto": true,
-    "angular": true
+    "angular": false,
+    "studyLaterStorageService": true
   }
 }
